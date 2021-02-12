@@ -3,7 +3,7 @@ const srcPath = path.resolve(__dirname, 'client', 'src');
 const distPath = path.resolve(__dirname, 'client', 'dist');
 
 module.exports = {
-  mode: ‘development’,
+  mode: 'development',
   entry: path.resolve(__dirname, 'client', 'src', 'Index.jsx'),
   output: {
     path: path.resolve(__dirname, 'client', 'dist'),
