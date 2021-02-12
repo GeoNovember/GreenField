@@ -4,31 +4,27 @@ const distPath = path.resolve(__dirname, 'client', 'dist');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'client', 'src', 'Index.jsx'),
-  output: {
-    path: path.resolve(__dirname, 'client', 'dist'),
-    filename: 'bundle.js'
-  },
+  devtool: 'inline-source-map',
   watch: true,
+  entry: path.resolve(srcPath, 'index.jsx'),
+  output: {
+    path: distPath,
+    filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: ['.jsx', '.js']
+  },
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [ '@babel/preset-env', '@babel/preset-react' ]
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
-      },
-      {
-        test: /\.(css)$/,
-        use: [ 'style-loader', 'css-loader' ],
-      },
-      {
-        test: /\.jpg$/,
-        use: ['file-loader' ]
       }
     ]
   }
