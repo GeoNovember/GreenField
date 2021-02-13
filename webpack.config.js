@@ -12,7 +12,8 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.jsx', '.js']
+    extensions: ['.jsx', '.js'],
+    modules: [path.join(__dirname, './node_modules')]
   },
   module: {
     rules: [
@@ -22,7 +23,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react', 'babel-preset-es2015']
           }
         }
       }

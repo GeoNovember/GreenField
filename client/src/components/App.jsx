@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleApiWrapper from './Map';
 import axios from 'axios'
-import CreateMarker from '../components/AddMarker/CreateMarker'
+import CreateMarker from './AddMarker/CreateMarker'
 class App extends Component {
   constructor(props) {
     super(props)
