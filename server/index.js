@@ -308,6 +308,6 @@ app.get('/api/account/google', passport.authenticate('google', { failureRedirect
 app.get('/', (req, res) => res.send(`Welcome ${req.user.displayName}!`))
 
 
-app.listen(3306, function() {
+app.listen(80, function() {
   console.log('listening on 3000')
 })
