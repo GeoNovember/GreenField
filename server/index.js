@@ -309,5 +309,5 @@ app.get('/', (req, res) => res.send(`Welcome ${req.user.displayName}!`))
 
 
 app.listen(80, function() {
-  console.log('listening on 3000')
+  console.log('listening on 80')
 })
