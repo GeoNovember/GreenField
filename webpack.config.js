@@ -1,19 +1,17 @@
 const path = require('path');
 const srcPath = path.resolve(__dirname, 'client', 'src');
 const distPath = path.resolve(__dirname, 'client', 'dist');
-
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   devtool: 'inline-source-map',
   watch: true,
-  entry: path.resolve(__dirname, 'client/src/index.jsx'),
+  entry: path.resolve(srcPath, 'index.jsx'),
   output: {
     path: distPath,
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
-    modules: [path.join(__dirname, './node_modules')]
+    extensions: ['.jsx', '.js']
   },
   module: {
     rules: [
@@ -23,7 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', 'babel-preset-es2015']
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
       }
